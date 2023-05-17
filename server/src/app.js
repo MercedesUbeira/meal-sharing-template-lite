@@ -16,7 +16,7 @@ app.use(express.json());
 
 // Define routes for your app
 app.get("/", (req, res) => {
-  res.json({ message: "Hello World" });
+  res.json({ message: "Hello World" }); // Add your code here
 });
 
 router.use("/meals", mealsRouter);
