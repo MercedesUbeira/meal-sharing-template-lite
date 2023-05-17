@@ -1,19 +1,25 @@
-import React from 'react';
-import MealsList from "./MealsList";
-import './App.css';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Background from './img/Background.jpg';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import TestComponent from "./components/TestComponent/TestComponent";
 
 function App() {
-  return (
-    <Router>
-      <div className='App' style={{backgroundImage: `url(${Background})`}}>
-        <Routes>
-          <Route path="/meals" element ={<MealsList />} />
-        </Routes>
-      </div>
-      </Router>
-  );
+  //Create your routes
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <div>Hello world!</div>,
+    },
+    {
+      path: "/hyf",
+      element: <div>Hack Your Future = AWESOME</div>,
+    },
+    {
+      path: "/test",
+      element: <TestComponent />,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
