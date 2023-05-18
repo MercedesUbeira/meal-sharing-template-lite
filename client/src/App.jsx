@@ -1,24 +1,26 @@
-import React from "react";
+import React from 'react';
+import MealsList from "./components/MealsList/MealsList";
+import './App.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import TestComponent from "./components/TestComponent/TestComponent";
+import AppWrapper from './components/AppWrapper/AppWrapper'
+import Home from './components/Home/Home';
+import MexicanFood from './components/Meals/MexicanFood/MexicanFood';
 
 function App() {
-  //Create your routes
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <div>Hello world!</div>,
+      element: <AppWrapper><Home /></AppWrapper>,
     },
     {
-      path: "/hyf",
-      element: <div>Hack Your Future = AWESOME</div>,
+      path: "/meals",
+      element: <AppWrapper><MealsList /></AppWrapper>,
     },
     {
-      path: "/test",
-      element: <TestComponent />,
+      path: "/meals/2",
+      element: <AppWrapper><MexicanFood /></AppWrapper>,
     },
-  ]);
-
+  ])
   return <RouterProvider router={router} />;
 }
 

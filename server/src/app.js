@@ -6,7 +6,7 @@ const mealsRouter = require("./api/meals");
 const cors = require("cors");
 const knex = require("./database");
 require("dotenv").config(); // Load environment variables from .env file
-const port = process.env.PORT || 3000;
+const port = process.env.API_PORT || 3074;
 
 // Enable cross-origin resource sharing for all routes
 app.use(cors());
@@ -87,5 +87,5 @@ if (process.env.API_PATH) {
 
 // Start the server
 app.listen(port, () => {
-  console.log("Server listening on port 3000");
+  console.log("Server listening on port 3074");
 });
