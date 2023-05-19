@@ -7,6 +7,7 @@ import Home from "./components/Home/Home";
 import IndividualMeals from "./components/Meals/IndividualMeal";
 import NavBar from "./components/Shared/NavBar/NavBar";
 import About from "./components/About/About";
+import Reservations from "./components/Reservations/Reservations";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,10 +22,8 @@ function App() {
     {
       path: "/meals",
       element: (
-        <AppWrapper>
-          <NavBar />
-          <MealsList />
-        </AppWrapper>
+        <><NavBar />
+        <MealsList /></>
       ),
     },
     {
@@ -48,9 +47,10 @@ function App() {
     {
       path: "/reservation",
       element: (
-        <>       
+        <AppWrapper>       
         <NavBar/>
-        </>
+        <Reservations/>
+        </AppWrapper>
       ),
     },
   ]);

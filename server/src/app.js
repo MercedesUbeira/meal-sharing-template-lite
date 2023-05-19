@@ -3,7 +3,8 @@ const app = express();
 const router = express.Router();
 
 const mealsRouter = require("./api/meals");
-// const reservationsRouter = require("./api/reservations");
+const reservationsRouter = require("./api/reservations");
+
 const cors = require("cors");
 const knex = require("./database");
 require("dotenv").config(); // Load environment variables from .env file
@@ -18,6 +19,7 @@ app.use(express.json());
 
 // Add routes, starting with /meals
 router.use("/meals", mealsRouter);
+router.use("/reservations", reservationsRouter);
 
 // Define routes for your app
 app.get("/future-meals", async (req, res) => {

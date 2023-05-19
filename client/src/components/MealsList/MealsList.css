@@ -1,29 +1,10 @@
-.meals-list-wrapper {
+.meals-list ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* ESTO ES LO QUE TENGO QUE CAMBIAR PARA ARREGLAR LOS CUADRADOS*/
-.meals-list-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
-}
-
-.meals-list {
-  border-radius: 10px;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
-  padding: 20px;
-  margin: 15px 15px 15px 15px;
-  align-items: center;
-  justify-content: center;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
 }
 
 .meals-list h1 {
@@ -31,27 +12,29 @@
   margin-bottom: 20px;
 }
 
-.meals-list ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0%;
-  margin: 0%;
-}
-
-/* this is the rectangle that covers the li */
 .meals-list li {
-  width: calc(33.33% - 10px);
+  flex-basis: calc(33.33% - 20px);
   position: relative;
   overflow: hidden;
-  padding: 2px 2px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease;
-  margin-bottom: 30px;
   background-color: rgb(255, 255, 255);
-  opacity: 96%;
+  opacity: 0.96;
+  margin-bottom: 30px;
 }
+
+.meal-image {
+  display: block;
+  margin: 0 auto;
+  padding: 2px;
+  width: 98%;
+  height: 300px; 
+  object-fit: cover;
+  border-radius: 2%;
+}
+
 .meals-list li:hover {
   transform: scale(1.02);
 }
@@ -63,21 +46,8 @@
 .meals-list h2 {
   margin-bottom: 10px;
   font-size: 24px;
-}
-
-.meal-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  height: 200px;
-  border-radius: 2%;
-}
-
-.meals-list p {
-  margin: 0;
-  line-height: 1.5;
-  padding: 2px 2px 2px 2px;
-  margin-left: 2px;
+  opacity: 0.96;
+  margin-bottom: 30px;
 }
 
 .view-btn {
@@ -96,5 +66,13 @@
 .start-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+  /* Adjust the layout for smaller screens */
+  .meals-list ul {
+    justify-content: space-between;
+    gap: 10px; /* Reduce the gap between items for smaller screens */
+  }
 }
 

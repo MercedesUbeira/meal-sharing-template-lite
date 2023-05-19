@@ -12,6 +12,7 @@ function MealsList() {
       .then((res) => setMeals(res))
       .catch((e) => console.log(e));
   }, []);
+
   return (
     <div className="meals-list-wrapper">
       <div className="background-overlay"></div>

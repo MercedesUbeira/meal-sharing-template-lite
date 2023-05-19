@@ -1,0 +1,89 @@
+/* Reservations.css */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+  }
+  
+  .meal-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    height: auto;
+    max-height: 800px ;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    opacity: 80%;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+  
+  .meal-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+   color: #241610;
+
+  }
+  
+  .meal-details .meal-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .meal-details p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #BD5828;
+}
+
+button[type="submit"] {
+  background-color: #e0b676;
+  color: #241610;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #BD5828;
+  color: #f2f2f2;
+}
+  
+@media (max-width: 600px) {
+    .meal-details {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .meal-details {
+      padding: 10px;
+    }
+    
+    .meal-details h2 {
+      font-size: 20px;
+    }
+  }

@@ -19,31 +19,27 @@ ADD COLUMN image_link VARCHAR(255);
 
 USE Meal_sharing;
 UPDATE Meal
-SET image_link = 'https://imgur.com/ZhanTSu'
-WHERE id = 1;
-
-UPDATE Meal
-SET image_link = 'https://imgur.com/E16z0vd'
+SET image_link = 'https://i.imgur.com/E16z0vd.jpg'
 WHERE id = 2;
 
 UPDATE Meal
-SET image_link = 'https://imgur.com/wTEztGC'
+SET image_link = 'https://i.imgur.com/wTEztGC.jpg'
 WHERE id = 3;
 
 UPDATE Meal
-SET image_link = 'https://imgur.com/Bx2uvG3'
+SET image_link = 'https://i.imgur.com/Bx2uvG3.jpg'
 WHERE id = 4;
 
 UPDATE Meal
-SET image_link = 'https://imgur.com/kPG08U0'
+SET image_link = 'https://i.imgur.com/kPG08U0.jpg'
 WHERE id = 5;
 
 UPDATE Meal
-SET image_link = 'https://imgur.com/rBILZyy'
+SET image_link = 'https://i.imgur.com/rBILZyy.jpg'
 WHERE id = 6;
 
 UPDATE Meal
-SET image_link = 'https://imgur.com/vmDeGPm'
+SET image_link = 'https://i.imgur.com/vmDeGPm.jpg'
 WHERE id = 7;
 
 
@@ -139,6 +135,9 @@ SELECT
 FROM 
   Reservation;
 -- Add a new reservation
+
+USE Meal_sharing;
+
 INSERT INTO Reservation (
   `id`, `title`, `number_of_guests`, 
   `meal_id`, `created _date`, `contact_phonenumber`, 
@@ -146,7 +145,7 @@ INSERT INTO Reservation (
 ) 
 VALUES 
   (
-    1, 'Birthday celebration', 15, 1, NOW(), 
+    1, 'Birthday celebration', 15, 3, NOW(), 
     '55228591', 'Mercedes Ubeira', 'mercedes@example.com'
   );
 -- Get a reservation with any id, fx 1:
