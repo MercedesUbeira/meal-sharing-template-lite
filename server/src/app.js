@@ -3,6 +3,7 @@ const app = express();
 const router = express.Router();
 
 const mealsRouter = require("./api/meals");
+// const reservationsRouter = require("./api/reservations");
 const cors = require("cors");
 const knex = require("./database");
 require("dotenv").config(); // Load environment variables from .env file

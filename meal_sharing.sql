@@ -13,6 +13,40 @@ CREATE TABLE Meal (
   `price` DECIMAL (10, 2) NOT NULL, 
   `created_date` DATETIME NOT NULL 
   );
+
+ALTER TABLE Meal
+ADD COLUMN image_link VARCHAR(255);
+
+USE Meal_sharing;
+UPDATE Meal
+SET image_link = 'https://imgur.com/ZhanTSu'
+WHERE id = 1;
+
+UPDATE Meal
+SET image_link = 'https://imgur.com/E16z0vd'
+WHERE id = 2;
+
+UPDATE Meal
+SET image_link = 'https://imgur.com/wTEztGC'
+WHERE id = 3;
+
+UPDATE Meal
+SET image_link = 'https://imgur.com/Bx2uvG3'
+WHERE id = 4;
+
+UPDATE Meal
+SET image_link = 'https://imgur.com/kPG08U0'
+WHERE id = 5;
+
+UPDATE Meal
+SET image_link = 'https://imgur.com/rBILZyy'
+WHERE id = 6;
+
+UPDATE Meal
+SET image_link = 'https://imgur.com/vmDeGPm'
+WHERE id = 7;
+
+
 -- Creating reservation table
 CREATE TABLE Reservation (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY, 
@@ -40,7 +74,7 @@ CREATE TABLE Review (
 INSERT INTO Meal (
   `id`, `title`, `description`, `location`, 
   `when`, `max_reservations`, `price`, 
-  `created_date`
+  `created_date`, `image_link` 
 ) 
 VALUES 
   (

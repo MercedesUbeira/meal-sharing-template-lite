@@ -68,21 +68,6 @@ mealsRouter.post("/", async (req, res) => {
   }
 });
 
-
-//NodeJS. W2 -  GET - Returns the meal by ID -- WORKS
-// mealsRouter.get("/:id", async (req, res) => {
-//   try {
-//     const id = req.params.id;
-//     const meal = await knex("Meal").where({ id }).first();
-//     if (!meal) {
-//       res.status(404).json({ error: `Meal with ID ${id} not found` });
-//     }
-//     res.status(201).json(meal);
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// });
-
 //NodeJS. W2 - PUT -- Updates meal by ID -- WORKS -- Note fo myself: check for a simple way to write this dateString part
 mealsRouter.put("/:id", async (req, res) => {
   try {

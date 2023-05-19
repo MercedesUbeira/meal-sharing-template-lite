@@ -17,7 +17,6 @@ function MealsList() {
       <div className="background-overlay"></div>
       <div className="meals-list-container">
         <div className="meals-list">
-          <h1>Meals</h1>
           <ul>
             {meals.map((meal) => (
               <li key={meal.id}>

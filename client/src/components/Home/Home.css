@@ -1,35 +1,43 @@
-.home {
+.overlay {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-.home h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 100px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-top: 50%;
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.home h2 {
+.home-logo {
+  width: 550px;
+  height: auto;
+  margin-bottom: 20px; 
+  margin-top: 150px;
+  animation: fadeInAnimation 2s ease-in-out;
+}
+
+.center-wrapper {
   text-align: center;
-  padding-top: 0%;
-  margin-top: 0px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .start-btn {
-  background-color: rgba(148, 67, 0, 0.8);
+  animation: fadeInAnimation 2s ease-in-out;
+  background-color: #BD5828;
   color: white;
-  font-size: 24px;
-  padding: 12px 24px;
+  font-size: 18px;
+  padding: 10px 200px 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: step-start;
   align-items: center;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .start-btn:hover {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './AppWrapper.css'
-import Background from '../../assets/video/Background.mp4';
+import Background from '../../../assets/video/Background.mp4';
 
 const AppWrapper = ({children}) => {
  return (
