@@ -16,7 +16,7 @@ reservationsRouter.get("/", async (req, res) => {
   reservationsRouter.post("/", async (req, res) => {
     try {
       const newReservation = req.body;
-      const dateString = newReservation['created _date']
+      const dateString = newReservation['created _date'];
       newReservation['created _date'] = new Date(dateString)
       console.log(newReservation)
       const insertedReservation = await knex("Reservation").insert(newReservation);
