@@ -72,7 +72,7 @@
   /* Adjust the layout for smaller screens */
   .meals-list ul {
     justify-content: space-between;
-    gap: 10px; /* Reduce the gap between items for smaller screens */
+    gap: 10px;
   }
 }
 

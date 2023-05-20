@@ -6,6 +6,7 @@ const Reservations = () => {
     const [name, setName] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
+    const navigate = useNavigate();
   
     const handleNameChange = (event) => {
       setName(event.target.value);
@@ -21,11 +22,10 @@ const Reservations = () => {
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      // TODO: Add your logic to handle the form submission
     };
   
     return (
-      <div className="meal-details"> {/* Apply the "meal-details" class */}
+      <div className="meal-details-flex">
         <h2>Make a Reservation</h2>
         <img
             src="https://upmeals.ca/wp-content/uploads/2021/05/dinner-together.jpg"

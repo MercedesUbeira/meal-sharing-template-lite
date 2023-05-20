@@ -8,6 +8,7 @@ import IndividualMeals from "./components/Meals/IndividualMeal";
 import NavBar from "./components/Shared/NavBar/NavBar";
 import About from "./components/About/About";
 import Reservations from "./components/Reservations/Reservations";
+import Footer from "./components/Shared/Footer/Footer";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,37 +23,54 @@ function App() {
     {
       path: "/meals",
       element: (
-        <><NavBar />
-        <MealsList /></>
+        <>
+          <NavBar />
+          <MealsList />
+          <Footer />
+        </>
       ),
     },
     {
       path: "/about",
       element: (
-        <>       
-        <NavBar/>
-        <About/>
-        </>
+        <div className="app-container">
+          <NavBar />
+          <About />
+          <Footer />
+        </div>
       ),
     },
     {
       path: "/meals/:mealID",
       element: (
-        <AppWrapper>
-          <NavBar />
-          <IndividualMeals />
-        </AppWrapper>
+        <div className="app-container">
+          <AppWrapper>
+            <NavBar />
+            <IndividualMeals />
+          </AppWrapper>
+          <Footer />
+        </div>
       ),
     },
     {
       path: "/reservation",
       element: (
-        <AppWrapper>       
-        <NavBar/>
-        <Reservations/>
-        </AppWrapper>
+        <div className="app-container">
+          <NavBar />
+          <Reservations />
+          <Footer />
+        </div>
       ),
     },
+    // {
+    //   path: "/succes",
+    //   element: (
+    //     <AppWrapper>
+    //     <NavBar/>
+    //     <Reservations/>
+    //     </AppWrapper>
+    //   ),
+    // },
   ]);
   return <RouterProvider router={router} />;
 }

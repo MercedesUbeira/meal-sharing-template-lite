@@ -7,15 +7,14 @@ body {
     background-color: #f2f2f2;
   }
   
-  .meal-details {
+  .meal-details-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 100%;
+    max-width: 600px;
     height: auto;
-    max-height: 800px ;
-    margin: 0 auto;
+    margin: 40px auto;
     background-color: white;
     border-radius: 10px;
     padding: 20px;
@@ -28,20 +27,20 @@ body {
     border-radius: 15px;
   }
   
-  .meal-details h2 {
+  .meal-details-flex h2 {
     font-size: 24px;
     margin-bottom: 10px;
    color: #241610;
 
   }
   
-  .meal-details .meal-image {
+  .meal-details-flex .meal-image {
     width: 200px;
     height: auto;
     margin-bottom: 10px;
   }
   
-  .meal-details p {
+  .meal-details-flex p {
     font-size: 16px;
     text-align: center;
   }
@@ -52,24 +51,27 @@ input[type="time"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
+  margin-top: 2px;
   border-radius: 5px;
   border: 1px solid #BD5828;
 }
 
 button[type="submit"] {
-  background-color: #e0b676;
-  color: #241610;
+  background-color: rgba(255, 115, 0, 0.8);
+  color: white;
+  font-size: 15px;
+  padding: 12px 24px;
+  margin-bottom: 10px;
   border: none;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 4px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: step-start;
+  align-items: center;
 }
 
 button[type="submit"]:hover {
-  background-color: #BD5828;
-  color: #f2f2f2;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
   
 @media (max-width: 600px) {
@@ -83,7 +85,7 @@ button[type="submit"]:hover {
       padding: 10px;
     }
     
-    .meal-details h2 {
+    .meal-details-flex h2 {
       font-size: 20px;
     }
   }
