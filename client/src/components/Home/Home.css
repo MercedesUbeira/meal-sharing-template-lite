@@ -44,3 +44,14 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+/*Responsive style for phone */
+@media (max-width: 360px) {
+  .home-logo {
+    width: 380px;
+  }
+  
+  .start-btn {
+    padding: 10px 50px;
+  }
+}
