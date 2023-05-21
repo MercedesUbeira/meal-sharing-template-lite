@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Resevations.css";
+import "./BecomeAHost.css";
 
-const Reservations = () => {
+const BecomeAHost = () => {
     const [name, setName] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
@@ -50,7 +50,8 @@ const Reservations = () => {
   
     return (
       <div className="meal-details-flex">
-        <h2>Make a Reservation</h2>
+        <h2>Become a host!</h2>
+        <h3>Your adventure begins here</h3>
         <img
             src="https://upmeals.ca/wp-content/uploads/2021/05/dinner-together.jpg"
             alt="people sharing food"
@@ -93,4 +94,4 @@ const Reservations = () => {
 };
 
 
-export default Reservations;
+export default BecomeAHost;

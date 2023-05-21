@@ -34,7 +34,7 @@ function MealsList() {
                   className="view-btn"
                   onClick={() => navigate(`/meals/${meal.id}`)}
                 >
-                  View Meal
+                 Book here
                 </button>
               </li>
             ))}

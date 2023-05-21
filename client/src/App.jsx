@@ -7,8 +7,9 @@ import Home from "./components/Home/Home";
 import IndividualMeals from "./components/Meals/IndividualMeal";
 import NavBar from "./components/Shared/NavBar/NavBar";
 import About from "./components/About/About";
-import Reservations from "./components/Reservations/Reservations";
+import BecomeAHost from "./components/BecomeAHost/BecomeAHost";
 import Footer from "./components/Shared/Footer/Footer";
+import NewMealForm from "./components/BecomeAHost/NewMealForm/NewMealForm";
 
 function App() {
   const router = createBrowserRouter([
@@ -53,11 +54,11 @@ function App() {
       ),
     },
     {
-      path: "/reservation",
+      path: "/BecomeAHost",
       element: (
         <div className="app-container">
           <NavBar />
-          <Reservations />
+          <NewMealForm />
           <Footer />
         </div>
       ),

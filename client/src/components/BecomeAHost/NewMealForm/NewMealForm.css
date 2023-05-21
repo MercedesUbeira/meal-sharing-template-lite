@@ -1,0 +1,117 @@
+/* Reservations.css */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+  }
+  
+  .meal-details-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    height: auto;
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    opacity: 80%;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+  
+  .meal-details-flex h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #241610;
+  }
+  
+  .meal-details-flex .meal-image {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .meal-details-flex p {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="time"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 2px;
+    border-radius: 5px;
+    border: 1px solid #bd5828;
+  }
+
+  textarea#description {
+    width:  100%;
+    height: 100px;
+    padding: 10px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #bd5828;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    background-color: rgba(255, 115, 0, 0.8);
+    color: white;
+    font-size: 15px;
+    padding: 12px 24px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: step-start;
+    align-items: center;
+  }
+  
+  button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 600px) {
+    .meal-details-flex {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .meal-details-flex {
+      padding: 10px;
+    }
+  
+    .meal-details-flex h2 {
+      font-size: 20px;
+    }
+  
+  }
+  
+  @media (max-width: 360px) {
+    .meal-details-flex {
+      max-width: 300px; 
+      margin: 20px auto;
+      padding: 10px;
+    }
+  
+    .meal-details-flex h2 {
+      font-size: 20px;
+    }
+  
+  }
+  
