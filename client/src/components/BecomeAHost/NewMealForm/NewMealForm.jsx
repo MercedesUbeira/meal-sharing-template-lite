@@ -1,48 +1,70 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import DatePicker from "react-datepicker";
 import "./NewMealForm.css";
+import "react-datepicker/dist/react-datepicker.css";
 
-const NewMealForm = () => {
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [location, setLocation] = useState('');
-    const [maxReservations, setMaxReservations] = useState('');
-    const [price, setPrice] = useState('');
+const NewMealForm = ({submit, newMealData, setNewMealData}) => {
   
     const handleTitleChange = (event) => {
-      setTitle(event.target.value);
+      const newTitle = event.target.value;
+      setNewMealData((prevData) => ({
+        ...prevData, // to avoid updating the hole data
+        title: newTitle
+      }));
     };
   
     const handleDescriptionChange = (event) => {
-      setDescription(event.target.value);
+      const newDescription = event.target.value;
+      setNewMealData((prevData) => ({
+        ...prevData,
+        description: newDescription
+      }));
     };
   
     const handleLocationChange = (event) => {
-      setLocation(event.target.value);
+      const newLocation = event.target.value;
+      setNewMealData((prevData) => ({
+        ...prevData,
+        location: newLocation
+      }));
     };
 
     const handleMaxReservationsChange = (event) => {
-      setMaxReservations(event.target.value);
+      const newMaxReservation = event.target.value;
+      setNewMealData((prevData) => ({
+        ...prevData,
+        max_reservations: newMaxReservation
+      }));
     };
 
     const handlePriceChange = (event) => {
-      setPrice(event.target.value);
+      const newPrice = event.target.value;
+      setNewMealData((prevData) => ({
+        ...prevData,
+        price: newPrice
+      }));
     };
+
+    const handleImageChange = (event) => {
+      const newURL = event.target.value;
+      setNewMealData((prevData) => ({
+        ...prevData,
+        image_link: newURL
+      }))
+    }
+
+    const handleWhenchange = (date) => {
+      setNewMealData((prevData) => ({
+        ...prevData,
+        when: date
+      }));
+    }
   
     const handleSubmit = (event) => {
       event.preventDefault();
 
-    const reservationData = {
-      title: title,
-      description: description,
-      location: location,
-      max_reservations: maxReservations,
-      price: price,
-      created_date: new Date().toISOString()
+      submit();
     };
-
-    onSubmit(mealData);
-};
 
     return (
       <div className="meal-details-flex">
@@ -58,7 +80,7 @@ const NewMealForm = () => {
             <input
               type="text"
               id="title"
-              value={title}
+              value={newMealData.title}
               onChange={handleTitleChange}
               required
             />
@@ -67,7 +89,7 @@ const NewMealForm = () => {
             <label htmlFor="description">Description:</label>
             <br></br><textarea
               id="description"
-              value={description}
+              value={newMealData.description}
               onChange={handleDescriptionChange}
               required
             />
@@ -77,7 +99,7 @@ const NewMealForm = () => {
             <input
               type="text"
               id="location"
-              value={location}
+              value={newMealData.location}
               onChange={handleLocationChange}
               required
             />
@@ -87,7 +109,7 @@ const NewMealForm = () => {
             <input
               type="number"
               id="maxReservations"
-              value={maxReservations}
+              value={newMealData.maxReservations}
               onChange={handleMaxReservationsChange}
               required
             />
@@ -97,8 +119,21 @@ const NewMealForm = () => {
             <input
               type="number"
               id="price"
-              value={price}
+              value={newMealData.price}
               onChange={handlePriceChange}
+              required
+            />
+          </div>
+      
+          <DatePicker selected={newMealData.when} onChange={(date) => handleWhenchange(date)} />
+
+          <div>
+            <label htmlFor="url-meal">Insert URL:</label>
+            <input
+              type="text"
+              id="image_link"
+              value={newMealData.image_link}
+              onChange={handleImageChange}
               required
             />
           </div>

@@ -2,6 +2,18 @@ const express = require("express");
 const mealsRouter = express.Router();
 const knex = require("../database");
 
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const seconds = String(date.getSeconds()).padStart(2, '0');
+
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+
 //NodeJS. W2 -  GET - Returns the meal by ID -- WORKS
 mealsRouter.get("/:id", async (req, res) => {
   try {
@@ -58,9 +70,11 @@ mealsRouter.get("/", async (req, res) => {
 mealsRouter.post("/", async (req, res) => {
   try {
     const newMeal = req.body;
-    const dateString = newMeal['when']
-      newMeal['when'] = new Date(dateString)
-      console.log(newMeal)
+    const whenString = newMeal.when
+    const createdDateString = newMeal.created_date
+    newMeal.when = formatDate(new Date(whenString))
+    newMeal.created_date = formatDate(new Date(createdDateString))
+    console.log(newMeal)
     const insertedMeal = await knex("Meal").insert(newMeal);
     res.status(201).json(insertedMeal);
   } catch (error) {
@@ -74,11 +88,12 @@ mealsRouter.put("/:id", async (req, res) => {
     const id = req.params.id;
     const updatedMeal = req.body
     const dateString = updatedMeal['when']
-      updatedMeal['when'] = new Date(dateString)
-      console.log(updatedMeal)
+
+    updatedMeal['when'] = Date.parse(dateString)
+    console.log(updatedMeal)
     const dateString2 = updatedMeal['created_date']
-      updatedMeal['created_date'] = new Date(dateString2)
-      console.log(updatedMeal)
+    updatedMeal['created_date'] = Date.parse(dateString2)
+    console.log(updatedMeal)
     const meal = await knex("Meal").where({ id }).update(updatedMeal);
     if (!meal) {
       res.status(404).json({ error: `Meal with ID ${id} not found` });

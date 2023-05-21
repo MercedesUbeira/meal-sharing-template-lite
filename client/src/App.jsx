@@ -58,7 +58,7 @@ function App() {
       element: (
         <div className="app-container">
           <NavBar />
-          <NewMealForm />
+          <BecomeAHost/>
           <Footer />
         </div>
       ),

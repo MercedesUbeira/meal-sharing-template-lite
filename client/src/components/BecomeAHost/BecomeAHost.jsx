@@ -1,97 +1,39 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import NewMealForm from './NewMealForm/NewMealForm'
 import "./BecomeAHost.css";
 
 const BecomeAHost = () => {
-    const [name, setName] = useState('');
-    const [date, setDate] = useState('');
-    const [time, setTime] = useState('');
-    const navigate = useNavigate();
-  
-    const handleNameChange = (event) => {
-      setName(event.target.value);
-    };
-  
-    const handleDateChange = (event) => {
-      setDate(event.target.value);
-    };
-  
-    const handleTimeChange = (event) => {
-      setTime(event.target.value);
-    };
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
+  const navigate = useNavigate();
+  const [newMealData, setNewMealData] = useState({
+    title: "",
+    description: "",
+    location: "",
+    max_reservations: "",
+    price: "",
+    image_link: "",
+    when: new Date(),
+    created_date: new Date(),
+  });
 
-    const reservationData = {
-      name: name,
-      date: date,
-      time: time,
-    }
-
+  const handleSubmit = () => {
     const requestOptions = {
       method: "POST",
-      headers: { "Content-Type": "application/json"},
-      body: JSON.stringify(reservationData)
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newMealData),
     };
 
-
-    // OJO PORQUE CAPAZ ESTA NO ES LA IP
-    fetch("http://localhost:3074/api/reservations", requestOptions)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      navigate("/success");
+    fetch("http://localhost:3074/api/meals", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        navigate("/success");
       })
       .catch((error) => {
         console.log("Error creating reservation:", error);
       });
-   };
-  
-    return (
-      <div className="meal-details-flex">
-        <h2>Become a host!</h2>
-        <h3>Your adventure begins here</h3>
-        <img
-            src="https://upmeals.ca/wp-content/uploads/2021/05/dinner-together.jpg"
-            alt="people sharing food"
-          />
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={handleNameChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="date">Date:</label>
-            <input
-              type="date"
-              id="date"
-              value={date}
-              onChange={handleDateChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="time">Time:</label>
-            <input
-              type="time"
-              id="time"
-              value={time}
-              onChange={handleTimeChange}
-              required
-            />
-          </div>
-          <button type="submit">Make Reservation</button>
-        </form>
-      </div>
-    );
+  };
+
+  return <NewMealForm submit={() => handleSubmit()} newMealData={newMealData} setNewMealData={(data) => setNewMealData(data)}/>
 };
-
-
 export default BecomeAHost;
