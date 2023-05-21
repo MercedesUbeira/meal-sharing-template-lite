@@ -27,7 +27,8 @@ const BecomeAHost = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        navigate("/success");
+        navigate("/meals/" + data[0]);
+
       })
       .catch((error) => {
         console.log("Error creating reservation:", error);

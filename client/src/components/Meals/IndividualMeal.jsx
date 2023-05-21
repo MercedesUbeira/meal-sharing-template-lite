@@ -18,7 +18,7 @@ function IndividualMeals() {
   return (
     <div className="meal-details">
         <h2>{meal.title}</h2>
-        <img src={meal.image} alt={meal.title} className="meal-image"/>
+        <img src={meal.image_link} alt={meal.title} className="meal-image"/>
         <p>{meal.description}</p>
     </div>
   );
