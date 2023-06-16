@@ -51,3 +51,6 @@ You should see the following:
 
 
 Hope this repository helps you! Good coding..
+
+this is the command to start the database
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:5.7
